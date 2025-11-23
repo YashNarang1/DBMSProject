@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inventory — Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-auth">
+  <main class="auth-card">
+    <div class="auth-left">
+      <img src="/mnt/data/Screenshot 2025-11-23 at 4.31.04 PM.png" alt="logo" class="auth-logo" />
+      <h1>Prototype Inventory</h1>
+      <p class="muted">Modern, clean inventory app — vanilla JS • Node & MySQL backend</p>
+    </div>
+
+    <div class="auth-right">
+      <h2>Welcome back</h2>
+      <p class="muted">Sign in to manage your items</p>
+
+      <label>Username
+        <input id="username" placeholder="demo" />
+      </label>
+      <label>Password
+        <input id="password" type="password" placeholder="demo" />
+      </label>
+
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button id="loginBtn" class="btn">Sign in</button>
+        <button id="demoBtn" class="btn ghost">Use demo</button>
+      </div>
+
+      <p id="error" class="error" aria-live="polite"></p>
+      <p class="small muted">If you don't have a backend running yet, you can still try the demo user (demo/demo).</p>
+    </div>
+  </main>
+
+<script src="login.js"></script>
+</body>
+</html>

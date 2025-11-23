@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inventory — Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar card">
+    <div class="brand">
+      <img src="/mnt/data/Screenshot 2025-11-23 at 4.31.04 PM.png" alt="logo" class="logo-sm" />
+      <div>
+        <div class="title">Prototype Inventory</div>
+        <div class="muted small">Vanilla JS • Node + MySQL</div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <input id="search" placeholder="Search items..." />
+      <select id="priceFilter">
+        <option value="all">All prices</option>
+        <option value="low">&lt; ₹100</option>
+        <option value="mid">₹100–₹500</option>
+        <option value="high">&gt; ₹500</option>
+      </select>
+      <button id="darkToggle" class="btn ghost">Dark</button>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+  </header>
+
+  <main class="container-grid">
+    <aside class="card sidebar">
+      <h3>Add item</h3>
+      <label>Name<input id="add_name" placeholder="Guitar pick" /></label>
+      <label>Description<input id="add_desc" placeholder="Small plastic pick" /></label>
+      <label>Price<input id="add_price" type="number" placeholder="99" /></label>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button id="addBtn" class="btn">Add</button>
+        <button id="clearBtn" class="btn ghost">Clear</button>
+      </div>
+
+      <hr/>
+      <div class="muted small">Account</div>
+      <div id="accountInfo" class="muted">Not logged in</div>
+    </aside>
+
+    <section class="card content">
+      <div class="list-header">
+        <h3>Your inventory <span id="totalCount" class="muted small">0</span></h3>
+        <div id="loading" style="display:none" aria-hidden="true" class="spinner"></div>
+      </div>
+
+      <div id="list" class="list"></div>
+    </section>
+  </main>
+
+  <!-- Edit Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card card">
+      <h3 id="modal-title">Edit Item</h3>
+      <label>Name<input id="edit_name" /></label>
+      <label>Description<input id="edit_desc" /></label>
+      <label>Price<input id="edit_price" type="number" /></label>
+      <div style="display:flex;gap:8px;margin-top:10px;justify-content:flex-end">
+        <button id="editCancel" class="btn ghost">Cancel</button>
+        <button id="editSave" class="btn">Save</button>
+      </div>
+    </div>
+  </div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
